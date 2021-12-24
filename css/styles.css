@@ -68,8 +68,10 @@ a {
 }
 
 .bell-icon {
-  width: 20px;
+  width: 40px;
   fill: var(--white);
+  border-right: solid 2px var(--border-gray);
+  padding-right: 12px;
 }
 
 .student-img {
@@ -101,6 +103,11 @@ a {
 .nav-icon {
   width: 30px;
   fill: var(--white);
+  transition: fill .3s ease-out;
+}
+
+.nav-icon:hover {
+  fill: var(--color-secondary);
 }
 
 .main {
@@ -241,6 +248,21 @@ a:hover {
 .settings {
   display: flex;
   flex-direction: column;
+}
+
+.switch-light {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.toggle-text {
+  width: 70%;
+}
+
+.toggle {
+  width: 30% !important;
 }
 
 .settings-button {
