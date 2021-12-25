@@ -18,6 +18,10 @@
   font-weight: bold;
 }
 
+.add-bot-marg {
+  margin-bottom: 16px;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 100%;
@@ -90,6 +94,7 @@ a {
 
 .main-nav ul{
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   margin: 0 0;
@@ -121,7 +126,7 @@ a {
 }
 
 .tab {
-  width: 50vh;
+  width: 100%;
   margin-left: 20px;
   margin-right: -8px;
   border-left: 1px solid var(--border-gray);
@@ -152,7 +157,7 @@ section,
 }
 
 .temp-graph {
-  max-width: 95vw;
+  max-width: 95%;
 }
 
 .social {
@@ -200,6 +205,20 @@ section,
   margin: 0;
 }
 
+input,
+textarea,
+select {
+  transition: border;
+  transition-duration: .4s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border: 2px solid var(--color-secondary);
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -220,10 +239,12 @@ form {
 
 .form-area {
   height: 100px;
+  margin-top: 16px;
   padding: 8px;
 }
 
 button {
+  margin-top: 16px;
   padding: 8px;
   border-radius: 5px;
   border: none;
@@ -254,7 +275,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 .toggle-text {
@@ -314,7 +335,60 @@ a:hover {
   .mobile {
     grid-column: 2 / span 1;
   }
+
+  .main-nav ul {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+  }
+
+  .nav-icon {
+    margin: 10px 0;
+  }
+
+  .traffic-nav {
+    justify-content: flex-end;
+  }
+
+  .traffic-nav-link {
+    margin-right: 25px;
+  }
+
+  .social {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-gap: 10px;
+  }
+
+  .social-container {
+    grid-row: 2 / span 1;
+  }
+
+  .members-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .member-text,
+  .members-container p {
+    align-self: center;
+  }
+
+  .member-text {
+    margin-left: 16px;
+    text-align: left;
+  }
+
+  .members-container p {
+    margin-top: 12px;
+  }
+
+  .switch-light {
+    width: 50%;
+  }
 }
+
+
 
 @media (min-width: 1024px) {
   .main {
