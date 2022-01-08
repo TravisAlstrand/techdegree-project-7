@@ -135,13 +135,24 @@ button {
 
 .main-header,
 .active,
-button {
+button,
+.alert-banner {
   color: var(--white);
 }
 
 .tab,
 .social-container {
   background-color: var(--light-gray);
+}
+
+.main-header,
+.alert-banner {
+  background-color: var(--color-primary);
+}
+
+button,
+.alert-banner {
+  border-radius: 5px;
 }
 
 /* ----------------MAIN STYLES-------------------- */
@@ -170,7 +181,6 @@ ul li {
 .main-header {
   grid-area: header;
   height: 8vh;
-  background-color: var(--color-primary);
 }
 
 .header-right {
@@ -299,7 +309,6 @@ a {
 }
 
 button {
-  border-radius: 5px;
   border: none;
 }
 
@@ -455,6 +464,6 @@ button {
   }
 
   #timezone {
-    margin-top: 20px;
+    margin-top: 28px;
   }
 }
