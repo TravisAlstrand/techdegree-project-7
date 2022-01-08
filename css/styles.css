@@ -24,14 +24,16 @@
 form,
 .settings,
 .switch-light,
-.settings-button {
+.settings-button,
+.alert-banner {
   display: flex;
 }
 
 .main-header,
 .dash-header,
 .switch-light,
-.settings-button {
+.settings-button,
+.alert-banner {
   justify-content: space-between;
 }
 
@@ -103,7 +105,8 @@ select:focus {
 
 button:hover,
 select:hover,
-a:hover {
+a:hover,
+.alert-banner-close:hover {
   cursor: pointer;
 }
 
@@ -118,7 +121,8 @@ a:hover {
 }
 
 .main,
-.main-header {
+.main-header,
+.alert-banner {
   padding: 0 8px;
 }
 
@@ -129,7 +133,8 @@ button {
 }
 
 .form-area,
-button {
+button,
+.alert {
   margin-top: 16px;
 }
 
@@ -153,6 +158,11 @@ button,
 button,
 .alert-banner {
   border-radius: 5px;
+}
+
+.tab,
+.alert {
+  width: 100%;
 }
 
 /* ----------------MAIN STYLES-------------------- */
@@ -237,7 +247,6 @@ a {
 }
 
 .tab {
-  width: 100%;
   margin-left: 20px;
   margin-right: -8px;
   border-left: 1px solid var(--border-gray);
