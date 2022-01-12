@@ -126,21 +126,21 @@ a:hover,
   padding: 0 8px;
 }
 
-.traffic-nav-link,
+.traffic-nav-btn,
 .form-area,
-button {
+.button-form {
   padding: 8px;
 }
 
 .form-area,
-button,
+.button-form,
 .alert {
   margin-top: 16px;
 }
 
 .main-header,
 .active,
-button,
+.button-form,
 .alert-banner {
   color: var(--white);
 }
@@ -155,7 +155,7 @@ button,
   background-color: var(--color-primary);
 }
 
-button,
+.button-form,
 .alert-banner {
   border-radius: 5px;
 }
@@ -257,13 +257,17 @@ a {
   justify-content: space-around;
 }
 
+.traffic-nav-btn {
+  background: none;
+}
+
 .active {
   border-radius: 35px;
   background-color: var(--color-secondary);
 }
 
-.temp-graph {
-  max-width: 95%;
+#daily-chart {
+  margin-top: 30px;
 }
 
 .social {
@@ -398,7 +402,7 @@ button {
     justify-content: flex-end;
   }
 
-  .traffic-nav-link {
+  .traffic-nav-btn {
     margin-right: 25px;
   }
 
