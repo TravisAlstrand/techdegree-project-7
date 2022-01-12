@@ -1,8 +1,24 @@
 const alertBanner = document.getElementById("alert");
+const notifBtn = document.getElementById("notif-btn");
+const notifDot = document.getElementById("notif-dot");
+
+const trafficNav = document.getElementById("traffic");
+
+const trafficNavBtns = document.getElementsByClassName("traffic-nav-btn");
 
 const trafficCanvas = document.getElementById("traffic-chart");
 const dailyCanvas = document.getElementById("daily-chart");
 const mobileCanvas = document.getElementById("mobile-chart");
+
+const user = document.getElementById("user-field");
+const message = document.getElementById("message-field");
+const send = document.getElementById("send");
+
+// NOTIFICATION ICON
+
+notifBtn.addEventListener('click', (e) => {
+    notifDot.setAttribute('visibility', "hidden");
+});
 
 // ALERT BANNER
 
@@ -17,6 +33,15 @@ alertBanner.addEventListener('click', (e) => {
     const element = e.target;
     if (element.classList.contains("alert-banner-close")) {
         alertBanner.style.display = 'none';
+    }
+});
+
+// LINE CHART NAV
+
+trafficNav.addEventListener('click', (e) => {
+    const element = e.target;
+    if (element.classList.contains("traffic-nav-btn")) {
+        element.classList.add("active");
     }
 });
 
@@ -127,4 +152,21 @@ let doughnutChart = new Chart(mobileCanvas, {
     type: 'doughnut',
     data: mobileData,
     options: mobileOptions
+});
+
+// MESSAGE USER FORM FIELD
+
+send.addEventListener('click', () => {
+    if (user.value === "" && message.value === "")
+    {
+        alert("Please fill out user and message fields before sending");
+    } else if (user.value === "")
+    {
+        alert("Please fill out user field before sending");
+    } else if (message.value === "")
+    {
+        alert("Please fill out message field before sending");
+    } else {
+        alert(`Message successfully send to: ${user.value}`);
+    }
 });

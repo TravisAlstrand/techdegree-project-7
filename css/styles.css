@@ -55,11 +55,6 @@ form,
   fill: var(--white);
 }
 
-.bell-icon,
-.student-img {
-  width: 40px;
-}
-
 .settings,
 form {
   flex-direction: column;
@@ -73,6 +68,11 @@ form {
 .student-img,
 .profile-image {
   border-radius: 50%;
+}
+
+.student-img,
+.bell-icon {
+  width: 40px;
 }
 
 section,
@@ -165,6 +165,31 @@ a:hover,
   width: 100%;
 }
 
+.traffic-nav-btn,
+.notif-btn {
+  background: none;
+}
+
+.nav-icon:hover,
+.bell-icon:hover {
+  fill: var(--color-secondary);
+}
+
+.nav-icon,
+.bell-icon {
+  transition: fill .3s ease-out;
+}
+
+/* -----------------ANIMATION--------------------- */
+
+@keyframes wiggle {
+  20% {transform: rotate(-45deg);}
+  40% {transform: rotate(35deg);}
+  60% {transform: rotate(-20deg);}
+  80% {transform: rotate(10deg);}
+  100% {transform: rotate(0);}
+}
+
 /* ----------------MAIN STYLES-------------------- */
 
 .bold {
@@ -211,16 +236,25 @@ a {
 }
 
 .bell-icon {
-  border-right: solid 2px var(--border-gray);
+  /* border-right: solid 2px var(--border-gray); */
   padding-right: 12px;
 }
 
 .student-img {
-  margin: 0 12px;
+  margin-right: 12px;
+}
+
+.bell-icon:hover {
+  animation: wiggle .6s ease-out;
+}
+
+#notif-dot {
+  fill: var(--color-secondary);
 }
 
 .header-student-name {
   font-size: .75rem;
+  margin: auto;
 }
 
 .main-nav ul{
@@ -235,11 +269,6 @@ a {
 
 .nav-icon {
   width: 30px;
-  transition: fill .3s ease-out;
-}
-
-.nav-icon:hover {
-  fill: var(--color-secondary);
 }
 
 .main {
@@ -255,10 +284,6 @@ a {
 
 .traffic-nav {
   justify-content: space-around;
-}
-
-.traffic-nav-btn {
-  background: none;
 }
 
 .active {
@@ -367,6 +392,15 @@ button {
   .main {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .student-img,
+  .bell-icon {
+    width: 50px;
+  }
+
+  .header-student-name {
+    font-size: 1rem;
   }
 
   .dash-header,
