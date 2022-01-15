@@ -7,11 +7,6 @@ const notifMenu = document.getElementById("notifications");
 const trafficNav = document.getElementById("traffic");
 const trafficNavBtns = document.getElementsByClassName("traffic-nav-btn");
 
-const trafficHourlyBtn = document.getElementById("hourly");
-const trafficDailyBtn = document.getElementById("daily");
-const trafficWeeklyBtn = document.getElementById("weekly");
-const trafficMonthlyBtn = document.getElementById("monthly");
-
 const trafficCanvas = document.getElementById("traffic-chart");
 const dailyCanvas = document.getElementById("daily-chart");
 const mobileCanvas = document.getElementById("mobile-chart");
@@ -21,6 +16,9 @@ const message = document.getElementById("message-field");
 const send = document.getElementById("send");
 
 let notifsOpen = false;
+
+
+// ------------------------------------------------------------------------- //
 
 // NOTIFICATION ICON / MENU
 
@@ -45,6 +43,8 @@ function closeNotifsMenu() {
     notifBell.classList.remove("notif-active");
     notifsOpen = false;
 }
+
+// ------------------------------------------------------------------------- //
 
 // ALERT BANNER
 
@@ -83,14 +83,20 @@ const trafficDataWeekly =
 const trafficDataMonthly = 
     [950, 1550, 1000, 2350, 700, 350, 1850, 1150, 2000, 1200, 950];
 
+// ------------------------------------------------------------------------- //
+
 // LINE CHART OPTIONS
 
 let trafficOptions = {
     fill: true,
     aspectRatio: 2.5,
-    animation: {
-        duration: 0
-    },
+    animations: {
+        radius: {
+          duration: 400,
+          easing: 'linear',
+          loop: (context) => context.active
+        }
+      },
     scales: {
         y: {
             beginAtZero: true
@@ -102,6 +108,8 @@ let trafficOptions = {
         }
     }
 };
+
+// ------------------------------------------------------------------------- //
 
 //  INITIAL LINE CHART SET
 
@@ -116,7 +124,7 @@ let trafficChart = new Chart(trafficCanvas, {
             borderWidth: 1,
             cubicInterpolationMode: 'monotone',
             pointHoverBackgroundColor: 'rgb(111, 199, 135)',
-            pointHoverRadius: 7
+            pointHoverRadius: 9
             }]
         },
     options: trafficOptions
@@ -127,11 +135,8 @@ let trafficChart = new Chart(trafficCanvas, {
 // CHANGING LINE CHART DATA
 
 function updateChart(chart, newData) {
-    chart.data.datasets[0].data.pop();
+    chart.data.datasets[0].data = newData;
     chart.update();
-    chart.data.datasets[0].data.push(newData);
-    chart.update();
-    console.log(chart.data.datasets[0].data);
 };
 
 // ------------------------------------------------------------------------- //
@@ -195,6 +200,8 @@ let barChart = new Chart(dailyCanvas, {
     options: dailyOptions
 });
 
+// ------------------------------------------------------------------------- //
+
 // DOUGHNUT CHART
 
 let mobileData = {
@@ -229,7 +236,9 @@ let doughnutChart = new Chart(mobileCanvas, {
     options: mobileOptions
 });
 
-// MESSAGE USER FORM FIELD
+// ------------------------------------------------------------------------- //
+
+// MESSAGE USER FORM FIELD - ERROR & SUCCESSFULLY SENT ALERTS
 
 send.addEventListener('click', (event) => {
     event.preventDefault();
@@ -246,3 +255,6 @@ send.addEventListener('click', (event) => {
         alert(`Message successfully send to: ${user.value}`);
     }
 });
+
+// ------------------------------------------------------------------------- //
+

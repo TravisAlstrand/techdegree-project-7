@@ -107,7 +107,7 @@ select:focus {
 button:hover,
 select:hover,
 a:hover,
-.alert-banner-close:hover {
+.alert-banner-close:hover{
   cursor: pointer;
 }
 
@@ -181,6 +181,10 @@ a:hover,
   transition: fill .3s ease-out;
 }
 
+.bell-icon {
+  position: relative;
+}
+
 /* -----------------ANIMATION--------------------- */
 
 @keyframes wiggle {
@@ -237,6 +241,7 @@ a {
 }
 
 .bell-icon {
+  position: relative;
   padding-right: 12px;
 }
 
@@ -245,7 +250,7 @@ a {
 }
 
 .bell-icon:hover {
-  position: relative;
+  
   animation: wiggle .6s ease-out;
 }
 
